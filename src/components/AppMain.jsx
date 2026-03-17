@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import AppCards from './AppMain/AppCards'
-import App from '../App'
 
 export default function AppMain({ apiUrl }) {
 
