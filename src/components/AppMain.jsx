@@ -1,4 +1,4 @@
-export default function AppMain() {
+export default function AppMain({lists}) {
 
 
     return (
