@@ -4,7 +4,7 @@ import AppFooter from './components/AppFooter'
 
 function App() {
 
-  const apiUrl = 'https://lanciweb.github.io/demo/api/actresses/'
+  const apiUrl = 'https://lanciweb.github.io/demo/api/actors/'
 
   return (
     <>
