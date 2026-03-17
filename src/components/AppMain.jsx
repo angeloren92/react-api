@@ -1,30 +1,51 @@
 import { useEffect, useState } from 'react'
 import AppCards from './AppMain/AppCards'
 
-export default function AppMain({ apiUrl }) {
+const apiUrlActors = 'https://lanciweb.github.io/demo/api/actors/'
+const apiUrlActress = 'https://lanciweb.github.io/demo/api/actresses/'
 
-    const [lists, setLists] = useState([])
-    console.log(lists)
+export default function AppMain() {
+
+    const [actors, setActors] = useState([])
+    const [actress, setActress] = useState([])
 
     useEffect(() => {
-        fetch(apiUrl)
+        fetch(apiUrlActors)
             .then(response => response.json())
             .then(data => {
-                setLists(data)
+                setActors(data)
+            })
+
+        fetch(apiUrlActress)
+            .then(response => response.json())
+            .then(data => {
+                setActress(data)
             })
     }, [])
+
+    console.log(actress)
 
     return (
         <main>
             <div className="container">
-                <div className="row">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                     {
-                        lists.map(element => {
+                        actors.map(element => {
                             return (
-                                <AppCards 
-                                key={element.id}
-                                element={element}
-                                /> 
+                                <AppCards
+                                    key={element.id}
+                                    element={element}
+                                />
+                            )
+                        })
+                    }
+                    {
+                        actress.map(element => {
+                            return (
+                                <AppCards
+                                    key={element.id}
+                                    element={element}
+                                />
                             )
                         })
                     }

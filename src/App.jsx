@@ -4,14 +4,10 @@ import AppFooter from './components/AppFooter'
 
 function App() {
 
-  const apiUrl = 'https://lanciweb.github.io/demo/api/actors/'
-
   return (
     <>
       <AppHeader />
-      <AppMain
-        apiUrl={apiUrl}
-      />
+      <AppMain />
       <AppFooter />
     </>
   )
